@@ -18,3 +18,16 @@ function createFooter() {
 
   document.body.appendChild(createFoot);
 }
+
+document.getElementById("button_container");
+
+const homeButton = document.createElement("button");
+const otherUserButton = document.createElement("button");
+
+homeButton.innerHTML = `Home`;
+otherUserButton.innerHTML = `Other User Entries`;
+
+document.getElementById("button_container").appendChild(homeButton);
+document.getElementById("button_container").appendChild(otherUserButton);
+
+function createCard() {}
