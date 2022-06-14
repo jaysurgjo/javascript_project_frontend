@@ -61,3 +61,5 @@ function createCard(obj) {
 
   document.getElementById("card_container").appendChild(cardContent);
 }
+
+// added to js
