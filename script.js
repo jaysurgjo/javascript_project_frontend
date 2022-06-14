@@ -1,23 +1,4 @@
-createFooter();
 createCard();
-
-function createHeader() {
-  const createHead = document.createElement("header");
-
-  createHead.innerHTML = `<header></header>`;
-  createHead.innerText = `This is the header`;
-
-  document.body.appendChild(createHead);
-}
-
-function createFooter() {
-  const createFoot = document.createElement("footer");
-
-  createFoot.innerHTML = `<footer></footer>`;
-  createFoot.innerText = `This is the footer`;
-
-  document.body.appendChild(createFoot);
-}
 
 function getData() {
   const first_name_element = document.getElementById("first_name");
@@ -48,6 +29,16 @@ function createCard(obj) {
   cardContent.appendChild(deleteButton);
 
   document.getElementById("card_container").appendChild(cardContent);
+}
+
+// Handle show/hide of details card
+function showDetailsCard() {
+  var div = document.getElementById("details");
+  if (div.style.display == "none") {
+    div.style.display = "";
+  } else {
+    div.style.display = "none";
+  }
 }
 
 // added to js
