@@ -1,39 +1,20 @@
-
 createCard();
-=======
+
 document.getElementById("input_form").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  createCard();
-  document.getElementById("input_form").reset();
+  function getData() {
+    const first_name_element = document.getElementById("first_name");
+    const last_name_element = document.getElementById("last_name");
+    const location_element = document.getElementById("location");
+
+    return {
+      first_name: first_name_element.value,
+      last_name: last_name_element.value,
+      location: location_element.value,
+    };
+  }
 });
-
-const createHead = document.createElement("header");
-
-createHead.innerHTML = `<header></header>`;
-createHead.innerText = `This is the header`;
-
-document.body.appendChild(createHead);
-
-const createFoot = document.createElement("footer");
-
-createFoot.innerHTML = `<footer></footer>`;
-createFoot.innerText = `This is the footer`;
-
-document.body.appendChild(createFoot);
-
-
-function getData() {
-  const first_name_element = document.getElementById("first_name");
-  const last_name_element = document.getElementById("last_name");
-  const location_element = document.getElementById("location");
-
-  return {
-    first_name: first_name_element.value,
-    last_name: last_name_element.value,
-    location: location_element.value,
-  };
-}
 
 function createCard(obj) {
   const { first_name, last_name, location } = getData();
@@ -56,7 +37,12 @@ function createCard(obj) {
   document.getElementById("card_container").appendChild(cardContent);
 }
 
-function deleteCard(record) {
-  record.remove();
+// Handle show/hide of details card
+function showDetailsCard() {
+  var div = document.getElementById("details");
+  if (div.style.display == "none") {
+    div.style.display = "";
+  } else {
+    div.style.display = "none";
+  }
 }
-// fixed js
