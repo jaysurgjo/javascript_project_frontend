@@ -68,3 +68,4 @@ function createCard(obj) {
 function deleteCard(record) {
   record.remove();
 }
+// fixed js
