@@ -42,11 +42,21 @@ footer {
     background: #e4e1e2;
   }
 
+  body {
+    background-image: url("resources/jon-tyson-FsYZE4ZZKJY-unsplash.jpg"); 
+  }
+
   #button_container {
     margin-left: -400px;
     float: left;
     margin-top: 110px;
     position: relative;
   }
+
+  .navbar a{
+    font-family: serif !important;
+    margin-bottom: 0;
+}
+
 
   /* fixed css */
