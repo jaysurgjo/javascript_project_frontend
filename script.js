@@ -1,29 +1,30 @@
-createHeader();
-createFooter();
-createCard();
+document.getElementById("input_form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-function createHeader() {
-  const createHead = document.createElement("header");
+  createCard();
+  document.getElementById("input_form").reset();
+});
 
-  createHead.innerHTML = `<header></header>`;
-  createHead.innerText = `This is the header`;
+const createHead = document.createElement("header");
 
-  document.body.appendChild(createHead);
-}
+createHead.innerHTML = `<header></header>`;
+createHead.innerText = `This is the header`;
 
-function createFooter() {
-  const createFoot = document.createElement("footer");
+document.body.appendChild(createHead);
 
-  createFoot.innerHTML = `<footer></footer>`;
-  createFoot.innerText = `This is the footer`;
+const createFoot = document.createElement("footer");
 
-  document.body.appendChild(createFoot);
-}
+createFoot.innerHTML = `<footer></footer>`;
+createFoot.innerText = `This is the footer`;
+
+document.body.appendChild(createFoot);
 
 document.getElementById("button_container");
 
 const homeButton = document.createElement("button");
 const otherUserButton = document.createElement("button");
+//homeButton.addEventListener("click");
+//otherUserButton.addEventListener("click");
 
 homeButton.innerHTML = `Home`;
 otherUserButton.innerHTML = `Other User Entries`;
@@ -39,27 +40,31 @@ function getData() {
   return {
     first_name: first_name_element.value,
     last_name: last_name_element.value,
-    locatation: location_element.value,
+    location: location_element.value,
   };
 }
 
 function createCard(obj) {
-  const { first_name, last_name, locatation } = getData();
+  const { first_name, last_name, location } = getData();
 
   const cardContent = document.createElement("tr");
-  const editButton = document.createElement("button");
   const deleteButton = document.createElement("button");
 
-  editButton.innerHTML = `Edit`;
+  deleteButton.addEventListener("click", () => deleteCard(cardContent));
+
   deleteButton.innerHTML = `Delete`;
 
-  cardContent.innerHTML = `<td>Title of Drink PlaceHolder</td>
+  cardContent.innerHTML = `
+  <td>${first_name} ${last_name}</td>
+  <td>${location}</td>
+  <td>Title of Drink PlaceHolder</td>
   <td>Recipe Example</td>`;
 
-  cardContent.appendChild(editButton);
   cardContent.appendChild(deleteButton);
 
   document.getElementById("card_container").appendChild(cardContent);
 }
 
-// added to js
+function deleteCard(record) {
+  record.remove();
+}
