@@ -1,3 +1,6 @@
+
+createCard();
+=======
 document.getElementById("input_form").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -19,18 +22,6 @@ createFoot.innerText = `This is the footer`;
 
 document.body.appendChild(createFoot);
 
-document.getElementById("button_container");
-
-const homeButton = document.createElement("button");
-const otherUserButton = document.createElement("button");
-//homeButton.addEventListener("click");
-//otherUserButton.addEventListener("click");
-
-homeButton.innerHTML = `Home`;
-otherUserButton.innerHTML = `Other User Entries`;
-
-document.getElementById("button_container").appendChild(homeButton);
-document.getElementById("button_container").appendChild(otherUserButton);
 
 function getData() {
   const first_name_element = document.getElementById("first_name");
