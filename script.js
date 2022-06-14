@@ -1,29 +1,23 @@
 document.getElementById("input_form").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  createHeader();
-  createFooter();
   createCard();
-  //document.getElementById("input_form").reset();
+  document.getElementById("input_form").reset();
 });
 
-function createHeader() {
-  const createHead = document.createElement("header");
+const createHead = document.createElement("header");
 
-  createHead.innerHTML = `<header></header>`;
-  createHead.innerText = `This is the header`;
+createHead.innerHTML = `<header></header>`;
+createHead.innerText = `This is the header`;
 
-  document.body.appendChild(createHead);
-}
+document.body.appendChild(createHead);
 
-function createFooter() {
-  const createFoot = document.createElement("footer");
+const createFoot = document.createElement("footer");
 
-  createFoot.innerHTML = `<footer></footer>`;
-  createFoot.innerText = `This is the footer`;
+createFoot.innerHTML = `<footer></footer>`;
+createFoot.innerText = `This is the footer`;
 
-  document.body.appendChild(createFoot);
-}
+document.body.appendChild(createFoot);
 
 document.getElementById("button_container");
 
