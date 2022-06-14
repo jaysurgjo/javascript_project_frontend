@@ -3,7 +3,7 @@ createFooter();
 createCard();
 
 function createHeader() {
-  const createHead = document.createElement("HEADER");
+  const createHead = document.createElement("header");
 
   createHead.innerHTML = `<header></header>`;
   createHead.innerText = `This is the header`;
@@ -12,7 +12,7 @@ function createHeader() {
 }
 
 function createFooter() {
-  const createFoot = document.createElement("FOOTER");
+  const createFoot = document.createElement("footer");
 
   createFoot.innerHTML = `<footer></footer>`;
   createFoot.innerText = `This is the footer`;
@@ -44,7 +44,7 @@ function getData() {
 }
 
 function createCard(obj) {
-  //const { first_name, last_name, locatation } = getData();
+  const { first_name, last_name, locatation } = getData();
 
   const cardContent = document.createElement("tr");
   const editButton = document.createElement("button");
@@ -54,10 +54,7 @@ function createCard(obj) {
   deleteButton.innerHTML = `Delete`;
 
   cardContent.innerHTML = `<td>Title of Drink PlaceHolder</td>
-                           <td>Recipe Example</td>`;
-
-  //cardContent.innerHTML[0] = `Title of Drink PlaceHolder`;
-  //cardContent.innerHTML[1] = `Recipe Example`;
+  <td>Recipe Example</td>`;
 
   cardContent.appendChild(editButton);
   cardContent.appendChild(deleteButton);
