@@ -1,20 +1,21 @@
-createCard();
-
-document.getElementById("input_form").addEventListener("submit", function (e) {
+document.getElementById("form_ele").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  function getData() {
-    const first_name_element = document.getElementById("first_name");
-    const last_name_element = document.getElementById("last_name");
-    const location_element = document.getElementById("location");
-
-    return {
-      first_name: first_name_element.value,
-      last_name: last_name_element.value,
-      location: location_element.value,
-    };
-  }
+  createCard();
+  document.getElementById("form_ele").reset();
 });
+
+function getData() {
+  const first_name_element = document.getElementById("first_name");
+  const last_name_element = document.getElementById("last_name");
+  const location_element = document.getElementById("location");
+
+  return {
+    first_name: first_name_element.value,
+    last_name: last_name_element.value,
+    location: location_element.value,
+  };
+}
 
 function createCard(obj) {
   const { first_name, last_name, location } = getData();
@@ -35,6 +36,14 @@ function createCard(obj) {
   cardContent.appendChild(deleteButton);
 
   document.getElementById("card_container").appendChild(cardContent);
+}
+
+function showOtherDrinkers() {
+  
+}
+
+function deleteCard(record) {
+  record.remove();
 }
 
 // Handle show/hide of details card
