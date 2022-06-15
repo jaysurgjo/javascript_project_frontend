@@ -46,3 +46,8 @@ function showDetailsCard() {
     div.style.display = "none";
   }
 }
+
+function clearForm() {
+  document.getElementById("form_ele").reset();
+  showDetailsCard();
+}
