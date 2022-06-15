@@ -92,3 +92,8 @@ function getFetchData() {
       console.log("Error: " + error);
     });
 }
+
+function clearForm() {
+  document.getElementById("form_ele").reset();
+  showDetailsCard();
+}
