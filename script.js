@@ -5,6 +5,8 @@ document.getElementById("form_ele").addEventListener("submit", function (e) {
   document.getElementById("form_ele").reset();
 });
 
+document.createElement("button");
+
 function getData() {
   const first_name_element = document.getElementById("first_name");
   const last_name_element = document.getElementById("last_name");
@@ -36,10 +38,6 @@ function createCard(obj) {
   cardContent.appendChild(deleteButton);
 
   document.getElementById("card_container").appendChild(cardContent);
-}
-
-function showOtherDrinkers() {
-  
 }
 
 function deleteCard(record) {
