@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>What am I drinking?</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -60,17 +60,18 @@
             <input type="text" id="location" name="" required>
             <label>Location (City, State or ZIP Format)</label>
           </div>
-          <div style="text-align: center"><a href="#" onclick="showDetailsCard()">
-            Submit
-          </a></div>
+          <div style="text-align: center">
+            <button type="submit" a href="#" onclick="showDetailsCard()">Submit</button>
+          </div>
         </form>
       </div>
 
       <div class="center" id="refresh">
         <button style="text-align: center" onclick="showDetailsCard()">Refresh Details Template</button>
       </div>
-      
-  
+
+      <div id="button_container"></div>
+      <div id="card_container"></div>
 
     <footer class="site-footer">
       <div class="container">
@@ -117,17 +118,13 @@
           </div>
         </div>
         <hr>
-      </div>
-
+          </div>
    
             </ul>
           </div>
         </div>
       </div>
 </footer>
-
-    <div id="button_container"></div>
-    <div id="card_container"></div>
     <script src="./script.js"></script>
     
   </body>
