@@ -92,5 +92,3 @@ function getFetchData() {
       console.log("Error: " + error);
     });
 }
-
-//
