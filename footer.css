@@ -1,12 +1,10 @@
 .site-footer
 {
   background-color:#26272b;
-  position:absolute;
+  position:sticky;
   bottom:0;
-  width:100%;
-  height:17%;
   color:#737373;
-
+  margin-top: auto;
 }
 
 /* CSS Styling for hr class - line in footer.
