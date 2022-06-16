@@ -5,10 +5,13 @@ function getData () {
   const last_name_element = document.getElementById('last_name')
   const location_element = document.getElementById('location')
 
+  document.getElementById('submit-form').addEventListener('click', postData)
+
   return {
     first_name: first_name_element.value,
     last_name: last_name_element.value,
     location: location_element.value
+    // Getting the data from the input form and returning the values.
   }
 }
 
@@ -31,9 +34,10 @@ function createCard (firstName, lastName, data) {
           <p>${last_name} </p>
           <p>${location} </p>
         </div>
-    </div>`
 
+    </div>`
   document.querySelector('.content-right').appendChild(cardContent)
+  // Getting the data from the inputs, creating an img varible, creating div element, setting an attribute to that div. Creating innerhtml and using string interpolation to pass in the data to show on our card. Appedning card_content to the div element.
 }
 
 function createTable (obj) {
@@ -62,6 +66,7 @@ function createTable (obj) {
       <td class="delete_table">Delete</td>
     </tr>
   </tbody>`
+  // Creating innerhtml for the table and adding the delete button.
 
   document.querySelector('.content-right').appendChild(tableContent)
   document
@@ -106,5 +111,7 @@ function postData (event) {
     .then(data => {
       createCard(first_name, last_name, data)
       document.getElementById('form_ele').reset()
+      document.querySelector('.content-wrapper').style.justifyContent =
+        'space-evenly'
     })
 }
