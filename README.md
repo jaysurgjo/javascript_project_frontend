@@ -1,6 +1,6 @@
 # What ya Drinking?
 
-WhatyaDrinking is a Javascript application that uses three separate Api's to recommend a drink for the user from their location and the temperature at their current location. We used Javascript, HTML, and CSS for the front-end and Javascript for the backend.
+WhatyaDrinking is a Javascript application that uses three separate Api's to recommend a drink for the user from their location and the temperature at their current location. We used Javascript, HTML, and CSS for the Front-end and Javascript for the Back-end.
 
 ## Installation
 
