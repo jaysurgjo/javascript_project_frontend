@@ -25,7 +25,7 @@ body {
 
 .navbar a {
   font-family: 'Lobster', cursive;
-  letter-spacing: 3px;
+
   margin-bottom: 0;
   position: sticky;
   border: 2px, gray;
@@ -38,7 +38,7 @@ body {
 
 .navbar #title {
   font-family: 'Lobster', cursive;
-  letter-spacing: 6px;
+  letter-spacing: 5px;
 }
 
 button {
