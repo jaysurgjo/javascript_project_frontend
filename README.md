@@ -6,8 +6,6 @@ WhatyaDrinking is a Javascript application that uses three separate Api's to rec
 
 run npm i
 
-## Usage
-
 ## Contributing
 If you would like to contribute to the application you can send us a email from the links in the toolbar. We welcome future enhancements and ideas that we can use to make the application better.
 
