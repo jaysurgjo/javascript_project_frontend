@@ -116,3 +116,12 @@ function postData(event) {
         "space-evenly";
     });
 }
+
+function showCardCont() {
+  var div = document.getElementById("content-card");
+  if (div.style.display == "none") {
+    div.style.display = "";
+  } else {
+    div.style.display = "none";
+  }
+}
