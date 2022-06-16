@@ -118,7 +118,7 @@ function postData(event) {
 }
 
 function showCardCont() {
-  var div = document.getElementById("#card_container");
+  var div = document.getElementById("content-card");
   if (div.style.display == "none") {
     div.style.display = "";
   } else {
