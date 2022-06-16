@@ -1,9 +1,11 @@
 document.getElementById("submit-form").addEventListener("click", function (e) {
   e.preventDefault();
+  // Getting form and adding eventlistener to it for onclick with an async function, also preventing default so it doesnt refresh.
 
   getFetchData();
   document.querySelector(".content-wrapper").style.justifyContent =
     "space-evenly";
+  // calling getFetchData and changing the styling for that query selector.
 });
 
 function getData() {
@@ -15,6 +17,7 @@ function getData() {
     first_name: first_name_element.value,
     last_name: last_name_element.value,
     location: location_element.value,
+    // Getting the data from the input form and returning the values.
   };
 }
 
@@ -36,14 +39,15 @@ function createCard() {
           <p>${location} </p>
         </div>
     </div>`;
-
   document.querySelector(".content-right").appendChild(cardContent);
+  // Getting the data from the inputs, creating an img varible, creating div element, setting an attribute to that div. Creating innerhtml and using string interpolation to pass in the data to show on our card. Appedning card_content to the div element.
 }
 
 function createTable(obj) {
   const { id, name, email } = obj;
   const tableContent = document.createElement("table");
   tableContent.className = "user_table";
+  // Creating obj from data, creating table, setting attribute to table.
 
   tableContent.innerHTML = `
   <thead>
@@ -66,6 +70,7 @@ function createTable(obj) {
       <td class="delete_table">Delete</td>
     </tr>
   </tbody>`;
+  // Creating innerhtml for the table and adding the delete button.
 
   document.querySelector(".content-right").appendChild(tableContent);
   document
