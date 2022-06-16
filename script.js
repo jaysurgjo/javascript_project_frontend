@@ -51,3 +51,12 @@ function clearForm() {
   document.getElementById("form_ele").reset();
   showDetailsCard();
 }
+
+function showCardCont() {
+  var div = document.getElementById("#card_container");
+  if (div.style.display == "none") {
+    div.style.display = "";
+  } else {
+    div.style.display = "none";
+  }
+}
