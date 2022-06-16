@@ -24,10 +24,21 @@ body {
 }
 
 .navbar a {
-  font-family: serif !important;
+  font-family: 'Lobster', cursive;
+  letter-spacing: 3px;
   margin-bottom: 0;
   position: sticky;
   border: 2px, gray;
+}
+
+.navbar a:hover {
+  color: #ffffff;
+  border-radius: 12px;
+}
+
+.navbar #title {
+  font-family: 'Lobster', cursive;
+  letter-spacing: 6px;
 }
 
 button {
@@ -71,7 +82,7 @@ button:hover {
 }
 
 #other_drinkers li > div, .user_card > div{
-  border: 1px solid rgb(153, 153, 153);
+  border: 1px solid rgb(255, 255, 255);
   padding: 2px;
 }
 
@@ -90,7 +101,7 @@ button:hover {
 
 .card-content p{
   font-size: 16px;
-  color: rgb(153, 153, 153);
+  color: rgb(255, 255, 255);
   margin-bottom: 0;
 }
 
@@ -111,14 +122,15 @@ button:hover {
 }
 
 .user_table{
-  border: 1px solid gray;
+  border: 1px solid rgb(255, 255, 255);
   border-collapse: collapse;
+  table-layout: fixed;
   width: 100%;
   margin-top: 40px;
 }
 
 .user_table td, th{
-  border: 1px solid gray;
+  border: 1px solid rgb(255, 255, 255);
   padding: 4px 8px;
 }
 
@@ -129,6 +141,17 @@ button:hover {
 .delete_table:hover{
   color: black;
   cursor: pointer;
+}
+
+.content-right {
+  max-width: 400px;
+  width: 100%;
+  padding: 40px;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #333333 74%);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.836);
+  border-radius: 10px;
 }
 
  
