@@ -1,29 +1,25 @@
-document.getElementById("submit-form").addEventListener("click", function (e) {
-  e.preventDefault();
+document.getElementById('submit-form').addEventListener('click', postData)
 
-  getFetchData();
-  document.querySelector(".content-wrapper").style.justifyContent =
-    "space-evenly";
-});
-
-function getData() {
-  const first_name_element = document.getElementById("first_name");
-  const last_name_element = document.getElementById("last_name");
-  const location_element = document.getElementById("location");
+function getData () {
+  const first_name_element = document.getElementById('first_name')
+  const last_name_element = document.getElementById('last_name')
+  const location_element = document.getElementById('location')
 
   return {
     first_name: first_name_element.value,
     last_name: last_name_element.value,
-    location: location_element.value,
-  };
+    location: location_element.value
+  }
 }
 
-function createCard() {
-  const { first_name, last_name, location } = getData();
-  const imgLink =
-    "https://static.vecteezy.com/system/resources/previews/001/971/958/original/blue-abstract-line-art-background-with-text-placeholder-vector.jpg";
-  const cardContent = document.createElement("div");
-  cardContent.className = "user_card";
+function createCard (firstName, lastName, data) {
+  const first_name = firstName
+  const last_name = lastName
+  const location = data.fCity + data.fState
+  const imgLink = data.fImage
+  const drinkName = data.fDrink
+  const cardContent = document.createElement('div')
+  cardContent.className = 'user_card'
 
   cardContent.innerHTML = `
     <div>
@@ -35,15 +31,15 @@ function createCard() {
           <p>${last_name} </p>
           <p>${location} </p>
         </div>
-    </div>`;
+    </div>`
 
-  document.querySelector(".content-right").appendChild(cardContent);
+  document.querySelector('.content-right').appendChild(cardContent)
 }
 
-function createTable(obj) {
-  const { id, name, email } = obj;
-  const tableContent = document.createElement("table");
-  tableContent.className = "user_table";
+function createTable (obj) {
+  const { id, name, email } = obj
+  const tableContent = document.createElement('table')
+  tableContent.className = 'user_table'
 
   tableContent.innerHTML = `
   <thead>
@@ -65,30 +61,50 @@ function createTable(obj) {
       <td>Recipe item</td>
       <td class="delete_table">Delete</td>
     </tr>
-  </tbody>`;
+  </tbody>`
 
-  document.querySelector(".content-right").appendChild(tableContent);
+  document.querySelector('.content-right').appendChild(tableContent)
   document
-    .querySelector(".delete_table")
-    .addEventListener("click", function () {
-      document.querySelector(".user_card").remove();
-      tableContent.remove();
-      document.querySelector(".content-wrapper").style.justifyContent =
-        "center";
-    });
+    .querySelector('.delete_table')
+    .addEventListener('click', function () {
+      document.querySelector('.user_card').remove()
+      tableContent.remove()
+      document.querySelector('.content-wrapper').style.justifyContent = 'center'
+    })
 }
 
-function getFetchData() {
+function getFetchData () {
   fetch(`https://jsonplaceholder.typicode.com/users`)
     .then(function (response) {
-      return response.json();
+      return response.json()
     })
     .then(function (myJson) {
-      createCard();
-      createTable(myJson[0]);
-      document.getElementById("form_ele").reset();
+      createCard()
+      createTable(myJson[0])
+      document.getElementById('form_ele').reset()
     })
     .catch(function (error) {
-      console.log("Error: " + error);
-    });
+      console.log('Error: ' + error)
+    })
+}
+
+function postData (event) {
+  event.preventDefault()
+  const { first_name, last_name, location } = getData()
+  fetch(
+    'https://weatherdrinkapp.herokuapp.com/postDrink?' +
+      new URLSearchParams({
+        //get info from form for search parameters
+        name: first_name + last_name,
+        loc: location
+      }),
+    {
+      method: 'POST'
+    }
+  )
+    .then(response => response.json())
+    .then(data => {
+      createCard(first_name, last_name, data)
+      document.getElementById('form_ele').reset()
+    })
 }
