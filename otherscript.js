@@ -23,7 +23,7 @@ function showOtherDrinkers() {
         otherDrinkersDiv.appendChild(li);
       });
     })
-    .catch((err) => console.log("some err==>>", err));
+    .catch((err) => console.log("err:", err));
 }
 
 showOtherDrinkers();
