@@ -100,7 +100,7 @@ function postData (event) {
     'https://weatherdrinkapp.herokuapp.com/postDrink?' +
       new URLSearchParams({
         //get info from form for search parameters
-        name: first_name + last_name,
+        name: first_name + ' ' + last_name,
         loc: location
       }),
     {
